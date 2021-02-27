@@ -94,6 +94,7 @@ switch (a) {
 
 //Вариант №2
 alert("Задание №4, Вариант 2 > рекурсия :");
+b = Math.floor(Math.random() * (15 - 0)) + 0;
 
 function num(n) {
     if (n > 15) {
@@ -102,5 +103,22 @@ function num(n) {
     alert(n);
     num(n + 1);
 }
-b = Math.floor(Math.random() * (15 - 0)) + 0;
+
 alert(num(b));
+
+//Задание №5
+function add(a, b) {
+    return a + b;
+}
+
+function sub(a, b) {
+    return a - b;
+}
+
+function div(a, b) {
+    return a / b;
+}
+
+function mult(a, b) {
+    return a * b;
+}
