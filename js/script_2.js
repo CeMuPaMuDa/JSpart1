@@ -107,6 +107,7 @@ function num(n) {
 alert(num(b));
 
 //Задание №5
+/*Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
 function add(a, b) {
     return a + b;
 }
@@ -122,3 +123,31 @@ function div(a, b) {
 function mult(a, b) {
     return a * b;
 }
+
+//Задание №6
+/*Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).*/
+
+function mathOperations(arg1, arg2, opr) {
+    switch (opr) {
+        case "+":
+            return add(arg1, arg2);
+            break;
+        case "-":
+            return sub(arg1, arg2);
+            break;
+        case "*":
+            return div(arg1, arg2);
+            break;
+        case "/":
+            return milt(arg1, arg2);
+            break;
+        default:
+            alert("Вы ввели некорректное значение!");
+            break;
+    }
+}
+frst = +prompt("Введите первое число: ", 1);
+scnd = +prompt("Введите второе число: ", 1);
+whatToDo = prompt("Что делаем? Введите +, -, * или / ");
+result = mathOperations(frst, scnd, whatToDo);
+alert("Результат операции: " + result);
