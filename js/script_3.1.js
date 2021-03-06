@@ -18,4 +18,4 @@ while (prime <= 100) {
     }
     prime++;
 }
-console.log(arr);
+console.log("Простые числа: " + arr.join(", "));
