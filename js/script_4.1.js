@@ -37,7 +37,7 @@ function NumToObject(one, tens, hundreds) {
         );
     };
 }
-//принимаем значение и выводим результат
+//принимаем значение и выводим результат в консоль
 var myObj = new NumToObject(ed, de, hu);
 myObj.show();
 
