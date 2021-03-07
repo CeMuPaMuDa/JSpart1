@@ -25,7 +25,7 @@ switch (event) {
         }
         break;
     case 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
-        stepNumber(quest[2]);
+        stepNumber(num, quest[2]);
         switch (event) {
             case 1: // Второе действие
                 stepNumber(quest[3]);
@@ -49,7 +49,7 @@ switch (event) {
 alert("Спасибо за игру");
 
 //------------------------------------------
-function isAnswer(q, event) {
+function isAnswer(event) {
     if (isNaN(event) || !isFinite(event)) {
         alert("Вы ввели недопустимый символ");
         return false;
@@ -64,7 +64,7 @@ function havePrompt(n) {
     return n.question + n.answer1 + n.answer2 + "-1 - Выход из игры";
 }
 
-function stepNumber(p) {
+function stepNumber(n, p) {
     do {
         ok = false;
         event = +prompt(havePrompt(p));
@@ -72,7 +72,8 @@ function stepNumber(p) {
         if (event == -1) {
             break;
         } else {
-            ok = isAnswer(2, event);
+            ok = isAnswer(event);
+            n++;
         }
     } while (!ok);
 }
