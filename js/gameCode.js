@@ -2,8 +2,7 @@
 //По номеру вопроса нужно вывести текст вопроса и текст выбранного ответа
 
 var event, ok;
-
-//var answers = [];
+var answers = [];
 stepNumber(quest[0]);
 
 switch (event) {
@@ -25,7 +24,7 @@ switch (event) {
         }
         break;
     case 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
-        stepNumber(num, quest[2]);
+        stepNumber(quest[2]);
         switch (event) {
             case 1: // Второе действие
                 stepNumber(quest[3]);
@@ -47,8 +46,18 @@ switch (event) {
         alert("Ошибка");
 }
 alert("Спасибо за игру");
-
+console.log(answers);
+var step = +prompt("Введите номер хода");
+var logGame =
+    "Ход №" +
+    step +
+    "... \n" +
+    answers[step - 1][0] +
+    "\n Выш выбор: вариант №" +
+    answers[step - 1][1];
+alert(logGame);
 //------------------------------------------
+
 function isAnswer(event) {
     if (isNaN(event) || !isFinite(event)) {
         alert("Вы ввели недопустимый символ");
@@ -64,7 +73,7 @@ function havePrompt(n) {
     return n.question + n.answer1 + n.answer2 + "-1 - Выход из игры";
 }
 
-function stepNumber(n, p) {
+function stepNumber(p) {
     do {
         ok = false;
         event = +prompt(havePrompt(p));
@@ -73,7 +82,17 @@ function stepNumber(n, p) {
             break;
         } else {
             ok = isAnswer(event);
-            n++;
         }
     } while (!ok);
+    switch (event) {
+        case 1:
+            answers.push([havePrompt(p), p.answer1]);
+            break;
+        case 2:
+            answers.push([havePrompt(p), p.answer2]);
+            break;
+        case -1:
+            answers.push([havePrompt(p), "Вы вышли из игры"]);
+            break;
+    }
 }
