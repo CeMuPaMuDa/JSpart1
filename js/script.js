@@ -31,6 +31,11 @@ function drawBoard(p, text) {
             }
             if (text[i] != undefined && text[i][j] != undefined) {
                 block.innerHTML = text[i][j];
+                if (i < 2) {
+                    block.classList.add("rotate");
+                } else if (i > 5) {
+                    block.style.color = "#eee3b9";
+                }
             }
 
             p.appendChild(block);
