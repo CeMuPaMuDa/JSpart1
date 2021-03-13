@@ -83,10 +83,15 @@ h6 {
   font-weight: 400;
 }
 
+body {
+  background-color: #000;
+}
+
 h1 {
   font-size: 50px;
   text-align: center;
   margin-bottom: 50px;
+  color: orange;
 }
 
 h2 {
@@ -94,111 +99,38 @@ h2 {
   text-align: center;
   margin-bottom: 15px;
   padding: 15px;
-}
-
-.container {
-  width: 1280px;
-  margin: 0 auto;
-}
-
-.chess {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 670px;
-  height: 670px;
-  font-size: 1.5rem;
-}
-
-.board {
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
-  top: 47%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border: 1px solid black;
-  height: 610px;
-  width: 610px;
-  -webkit-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
-}
-
-.block {
-  height: 75px;
-  width: 75px;
-}
-
-.black {
-  background-color: #000;
-}
-
-.white {
-  background-color: #ebb41f;
-}
-
-.numbers {
-  height: 100%;
-  width: 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  left: 0;
-  top: 0;
-  text-align: center;
-}
-
-.letters {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  color: darksalmon;
 }
 
 li {
   list-style: none;
+  font-size: 25px;
+  font-weight: 900;
+  color: brown;
+  padding: 1px 7px;
+  text-shadow: 1px 2px 3px black;
 }
 
-.rotate_letters {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+.cards .card1 .chess1, .cards .card2 .chess2, .cards .card3 .chess3 {
+  width: 700px;
+  height: 700px;
+  background-image: url(../img/firestock_wood_texture_03092013-700x700.jpg);
+  padding: 70px;
+  position: relative;
+  -webkit-box-shadow: 10px 10px 10px #221a0f;
+          box-shadow: 10px 10px 10px #221a0f;
 }
 
-.rotate_numbers {
+.cards .card1 .chess1 .board1, .cards .card2 .chess2 .board2, .cards .card3 .chess3 .board3 {
+  height: 560px;
+  width: 560px;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+.cards .card1 .chess1 .numbers1, .cards .card2 .chess2 .numbers2, .cards .card3 .chess3 .numbers3 {
   position: absolute;
-  height: 100%;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,13 +138,121 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  right: 0;
-  bottom: 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  left: 35px;
+  top: 70px;
+  text-align: center;
+}
+
+.cards .card1 .chess1 .letters1, .cards .card2 .chess2 .letters2, .cards .card3 .chess3 .letters3 {
+  position: absolute;
+  width: 80%;
+  bottom: 35px;
+  right: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cards .card1 .chess1 .rotate_letters1, .cards .card2 .chess2 .rotate_letters2, .cards .card3 .chess3 .rotate_letters3 {
+  position: absolute;
+  width: 80%;
+  top: 35px;
+  left: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.cards .card1 .chess1 .rotate_numbers1, .cards .card2 .chess2 .rotate_numbers2, .cards .card3 .chess3 .rotate_numbers3 {
+  position: absolute;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  right: 35px;
+  bottom: 70px;
   text-align: center;
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
+}
+
+.container {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.rotate {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 25px;
+}
+
+.cards .card1 {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.cards .card2 {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.cards .card3 {
+  margin-bottom: 10px;
+}
+
+.block {
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  line-height: 70px;
+  float: left;
+  font-size: 32px;
+  color: brown;
+  -webkit-box-shadow: inset 0 0 10px #504d4d;
+          box-shadow: inset 0 0 10px #504d4d;
+}
+
+.black {
+  background-image: url(../img/shutterstock_6840517311.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.white {
+  background-image: url(../img/shutterstock_4675252-700x700.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 /*# sourceMappingURL=style.css.map */

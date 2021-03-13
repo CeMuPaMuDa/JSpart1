@@ -1,9 +1,14 @@
 //reset style
 @import "reset.scss";
+body {
+    background-color: #000;
+}
+
 h1 {
     font-size: 50px;
     text-align: center;
     margin-bottom: 50px;
+    color: orange;
 }
 
 h2 {
@@ -11,91 +16,177 @@ h2 {
     text-align: center;
     margin-bottom: 15px;
     padding: 15px;
-}
-
-.container {
-    width: 1280px;
-    margin: 0 auto;
-}
-
-.chess {
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 670px;
-    height: 670px;
-    font-size: 1.5rem;
-}
-
-.board {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid black;
-    height: 610px;
-    width: 610px;
-    box-shadow: 0 0 10px black
-}
-
-.block {
-    height: 75px;
-    width: 75px;
-}
-
-.black {
-    background-color: #000;
-}
-
-.white {
-    background-color: rgb(235, 180, 31);
-}
-
-.numbers {
-    height: 100%;
-    width: 0%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    left: 0;
-    top: 0;
-    text-align: center;
-}
-
-.letters {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    color: darksalmon;
 }
 
 li {
     list-style: none;
+    font-size: 25px;
+    font-weight: 900;
+    color: brown;
+    padding: 1px 7px;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
 }
 
-.rotate_letters {
+%chess {
+    width: 700px;
+    height: 700px;
+    background-image: url(../img/firestock_wood_texture_03092013-700x700.jpg);
+    padding: 70px;
+    position: relative;
+    box-shadow: 10px 10px 10px rgb(34, 26, 15);
+}
+
+%board {
+    height: 560px;
+    width: 560px;
+    box-shadow: 0 0 10px #000;
+}
+
+%numbers {
     position: absolute;
-    width: 100%;
-    top: 0;
+    height: 80%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 35px;
+    top: 70px;
+    text-align: center;
+}
+
+%letters {
+    position: absolute;
+    width: 80%;
+    bottom: 35px;
+    right: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+%rotate_letters {
+    position: absolute;
+    width: 80%;
+    top: 35px;
+    left: 70px;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
     transform: rotate(-180deg);
 }
 
-.rotate_numbers {
+%rotate_numbers {
     position: absolute;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    right: 0;
-    bottom: 0;
+    justify-content: space-around;
+    right: 35px;
+    bottom: 70px;
     text-align: center;
     transform: rotate(-180deg);
+}
+
+.container {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 25px;
+    .card1 {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        .chess1 {
+            @extend %chess;
+            .numbers1 {
+                @extend %numbers;
+            }
+            .letters1 {
+                @extend %letters;
+            }
+            .board1 {
+                @extend %board;
+            }
+            .rotate_letters1 {
+                @extend %rotate_letters;
+            }
+            .rotate_numbers1 {
+                @extend %rotate_numbers;
+            }
+        }
+    }
+    .card2 {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        .chess2 {
+            @extend %chess;
+            .numbers2 {
+                @extend %numbers;
+            }
+            .letters2 {
+                @extend %letters;
+            }
+            .board2 {
+                @extend %board;
+            }
+            .rotate_letters2 {
+                @extend %rotate_letters;
+            }
+            .rotate_numbers2 {
+                @extend %rotate_numbers;
+            }
+        }
+    }
+    .card3 {
+        margin-bottom: 10px;
+        .chess3 {
+            @extend %chess;
+            .numbers3 {
+                @extend %numbers;
+            }
+            .letters3 {
+                @extend %letters;
+            }
+            .board3 {
+                @extend %board;
+            }
+            .rotate_letters3 {
+                @extend %rotate_letters;
+            }
+            .rotate_numbers3 {
+                @extend %rotate_numbers;
+            }
+        }
+    }
+}
+
+.block {
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    line-height: 70px;
+    float: left;
+    font-size: 32px;
+    color: brown;
+    box-shadow: inset 0 0 10px rgb(80, 77, 77);
+}
+
+.black {
+    background-image: url(../img/shutterstock_6840517311.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.white {
+    background-image: url(../img/shutterstock_4675252-700x700.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
