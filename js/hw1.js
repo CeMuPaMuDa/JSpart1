@@ -1,26 +1,45 @@
-//Задание №1
-var tCelsium = prompt("Задание №1: Введите температуру по цельсию: ");
-var tFaringate = (9 / 5) * tCelsium + 32;
-alert("Температура по Фарингейту равна: " + tFaringate);
-//Задание №2
-var isName = "Василий";
-var whoAdmin = isName;
-alert (" Задание №2: Нашего админа зовут: " + whoAdmin);
-//Задание №3
-alert ("Задание №3: И почему никто не придумал задание с номером 3?");
-//Задание 4
-alert ("Задание №4: Чему будет равно JS-выражение 1000 + `108`? А вот сейчас и проверим: ");
-alert ("Результат: " + (1000 + "108"));
-//Задание №5
-alert ("Задание №5: Хорошо, разберемся");
-//Доп задание
-var a = +prompt("Введите число №1: ");
-var b = +prompt("Введите число №2: ");
-alert ("Число №1: = " + a + "          Число №2: = " + b);
-a = a + b;
-b = b - a;
-b = -b;
-a = a - b;
-alert ("А теперь - Число №1: = " + a + "           Число №2: = " + b);
+var letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+var black = true;
 
+//рисуем буквы и цифры
+function numLet(p1, p2) {
+    var num = 8;
+    for (var j = 0; j < 8; j++) {
+        var letter = document.createElement("li");
+        letter.textContent = letters[j];
+        p1.appendChild(letter);
+        var numbers = document.createElement("li");
+        numbers.textContent = num--;
+        p2.appendChild(numbers);
+    }
+}
 
+//Рисуем доску
+function drawBoard(p, text) {
+    for (var i = 0; i < 8; i++) {
+        for (j = 0; j < 8; j++) {
+            if (j == 0) {
+                black = !black;
+            }
+            var block = document.createElement("div");
+            if (black) {
+                block.classList.add("block");
+                block.classList.add("black");
+            } else {
+                block.classList.add("block");
+                block.classList.add("white");
+            }
+            if (text[i] != undefined && text[i][j] != undefined) {
+                block.innerHTML = text[i][j];
+                if (i < 2) {
+                    block.classList.add("rotate");
+                } else if (i > 5) {
+                    block.style.color = "#eee3b9";
+                }
+            }
+
+            p.appendChild(block);
+            black = !black;
+        }
+    }
+}
