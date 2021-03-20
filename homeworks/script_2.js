@@ -59,37 +59,37 @@ a = Math.floor(Math.random() * (15 - 0)) + 0;
 
 switch (a) {
     case 0:
-        alert(0);
+        console.log(0);
     case 1:
-        alert(1);
+        console.log(1);
     case 2:
-        alert(2);
+        console.log(2);
     case 3:
-        alert(3);
+        console.log(3);
     case 4:
-        alert(4);
+        console.log(4);
     case 5:
-        alert(5);
+        console.log(5);
     case 6:
-        alert(6);
+        console.log(6);
     case 7:
-        alert(7);
+        console.log(7);
     case 8:
-        alert(8);
+        console.log(8);
     case 9:
-        alert(9);
+        console.log(9);
     case 10:
-        alert(10);
+        console.log(10);
     case 11:
-        alert(11);
+        console.log(11);
     case 12:
-        alert(12);
+        console.log(12);
     case 13:
-        alert(13);
+        console.log(13);
     case 14:
-        alert(14);
+        console.log(14);
     case 15:
-        alert(15);
+        console.log(15);
         break;
 }
 
