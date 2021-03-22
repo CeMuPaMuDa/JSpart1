@@ -5,23 +5,31 @@ for (i = 1; i <= 5; i++) {
     var image = document.createElement("img");
     image.src = "img/Slide" + i + ".jpg";
     image.alt = "slide" + i;
+    image.classList.add("slide-picture");
     sliders.appendChild(image);
 }
+var images = document.querySelectorAll(".slide-picture");
 
-var next = document.querySelector("#next-btn");
-next.addEventListener("click", function() {
-    begin += 1280;
-    if (begin > 5120) {
+function nextSlide() {
+    for (y = 0; y < images.length; y++) {
+        images[y].classList.add("hide");
+    }
+    images[begin].classList.remove("hide");
+}
+nextSlide();
+document.querySelector("#next-btn").onclick = function() {
+    if (begin - 1 == -1) {
+        begin = images.length - 1;
+    } else {
+        begin--;
+    }
+    nextSlide();
+};
+document.querySelector("#prev-btn").onclick = function() {
+    if (begin + 1 == images.length) {
         begin = 0;
+    } else {
+        begin++;
     }
-    sliders.style.left = -begin + "px";
-});
-
-var prev = document.querySelector("#prev-btn");
-prev.addEventListener("click", function() {
-    begin -= 1280;
-    if (begin < 0) {
-        begin = 5120;
-    }
-    sliders.style.left = -begin + "px";
-});
+    nextSlide();
+};
