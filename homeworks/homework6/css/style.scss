@@ -1,9 +1,18 @@
 @import "reset.scss";
 .container {
-    width: 80%;
+    width: 1280px;
     margin: 0 auto;
+    background-color: azure;
+    overflow: hidden;
 }
 
 .slider {
     display: flex;
+    width: 100%;
+    border: 3px solid black;
+    position: relative;
+    left: 0;
+    transition: all 1s;
 }
+
+#next-btn
